@@ -1,0 +1,6 @@
+Módulos: são conjuntos de código.
+
+3 tipos de módulos:
+-> Todos os arqvuiso JavaScript são módulos;
+-> Nativos;
+-> npm (Node Package Manager);
