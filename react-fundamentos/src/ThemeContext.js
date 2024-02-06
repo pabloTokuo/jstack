@@ -17,6 +17,6 @@ export function ThemeProvider(props) {
       }}
     >
       {props.children}
-    </ThemeContext.Provider>
+  </ThemeContext.Provider>
   )
 }
