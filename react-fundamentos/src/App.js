@@ -7,12 +7,14 @@ import Layout from "./components/Layout";
 import themes from "./styles/themes";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    theme: "dark",
+  };
 
-    this.state = {
-      theme: "dark",
-    }
+  handleToggleTheme = () => {
+    this.setState((prevState) => ({
+      theme: prevState.theme === "dark" ? "light" : "dark",
+    }));
   }
 
   render() {
@@ -21,9 +23,7 @@ class App extends Component {
     return (
       <ThemeProvider theme={themes[theme] || themes.dark}>
         <GlobalStyle />
-        <Layout onToggleTheme={() => {
-          this.setState(prevState => ({ theme: prevState.theme === "dark" ? "light" : "dark" }));
-        }} selectedTheme={theme} />
+        <Layout onToggleTheme={this.handleToggleTheme} />
       </ThemeProvider>
     );
   }
